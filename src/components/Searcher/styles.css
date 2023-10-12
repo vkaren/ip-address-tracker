@@ -1,0 +1,33 @@
+/*    Searcher container    */
+.searcher {
+  position: relative;
+}
+
+/*    Searcher container - Input    */
+.searcher__input {
+  width: 30rem;
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+}
+
+/*    Searcher container - Submit button    */
+.searcher__btn {
+  position: absolute;
+  right: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border: none;
+  background: var(--black);
+  cursor: pointer;
+}
+.searcher__btn:hover {
+  background: var(--very-dark-gray);
+}
+
+.searcher__btn_icon {
+  width: 8px;
+  height: 10px;
+}

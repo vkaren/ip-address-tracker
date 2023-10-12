@@ -26,8 +26,10 @@
 }
 
 :root {
+  --black: hsl(0, 0%, 5%);
   --very-dark-gray: hsl(0, 0%, 17%);
-  --dark-gray: hsl(0, 0%, 59%);
+  --dark-gray: hsl(0deg 0% 46%);
+  --light-gray: hsl(223, 19%, 93%);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -39,5 +41,9 @@
 
 html {
   font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+
+input {
   font-family: "Rubik", sans-serif;
 }

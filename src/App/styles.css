@@ -1,0 +1,33 @@
+/*    App Header    */
+.app__header {
+  position: relative;
+  z-index: 5;
+  height: 35vh;
+  padding: 3rem;
+  background-image: url("/images/pattern-bg-desktop.png");
+  background-size: cover;
+}
+
+/*    Header Container    */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  top: 35px;
+}
+
+/*    Header Container - Title    */
+.header__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+@media (max-width: 600px) {
+  .app__header {
+    background-image: url("/images/pattern-bg-mobile.png");
+  }
+}
