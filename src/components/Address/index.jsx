@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AppContext } from "../../context/app";
+import { AppContext } from "@/context/app";
 import "./styles.css";
 
 function Address() {

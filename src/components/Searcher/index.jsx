@@ -1,6 +1,6 @@
 import { useRef, useContext } from "react";
-import { AppContext } from "../../context/app";
-import arrowIcon from "../../assets/icons/icon-arrow.svg";
+import { AppContext } from "@/context/app";
+import arrowIcon from "@/assets/icons/icon-arrow.svg";
 import "./styles.css";
 
 function Searcher() {

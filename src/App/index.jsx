@@ -1,7 +1,7 @@
-import { AppProvider } from "../context/app";
-import Searcher from "../components/Searcher";
-import Address from "../components/Address";
-import MapSection from "../components/MapSection";
+import { AppProvider } from "@/context/app";
+import Searcher from "@/components/Searcher";
+import Address from "@/components/Address";
+import MapSection from "@/components/MapSection";
 import "./styles.css";
 
 function App() {
