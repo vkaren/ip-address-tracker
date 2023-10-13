@@ -1,20 +1,31 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { map as createMap, tileLayer, marker, icon } from "leaflet";
+import { AppContext } from "../../context/app";
 import locationIcon from "../../assets/icons/icon-location.svg";
 import "leaflet/dist/leaflet.css";
 import "./styles.css";
 
 function MapSection() {
+  const { currentAddress } = useContext(AppContext);
   const [map, setMap] = useState(null);
 
   useEffect(() => {
     if (!map) {
-      setMap(createMap("map").setView([-33.8678, 151.21], 13));
+      setMap(createMap("map"));
     } else {
       initMap();
-      addMarker();
     }
   }, [map]);
+
+  useEffect(() => {
+    if (currentAddress?.location) {
+      map.setView(
+        [currentAddress?.location?.lat, currentAddress?.location?.lng],
+        13
+      );
+      addMarker();
+    }
+  }, [currentAddress]);
 
   const initMap = () => {
     tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
@@ -32,7 +43,9 @@ function MapSection() {
       popupAnchor: [-3, -76],
     });
 
-    marker([-33.8678, 151.21], { icon: myIcon }).addTo(map);
+    marker([currentAddress?.location?.lat, currentAddress?.location?.lng], {
+      icon: myIcon,
+    }).addTo(map);
   };
 
   return <section id="map"></section>;
