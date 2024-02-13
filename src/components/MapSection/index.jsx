@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { map as createMap, tileLayer, marker, icon } from "leaflet";
 import { AppContext } from "@/context/app";
 import locationIcon from "@/assets/icons/icon-location.svg";
-import "leaflet/dist/leaflet.css";
 import "./styles.css";
 
 function MapSection() {
@@ -12,6 +11,7 @@ function MapSection() {
   useEffect(() => {
     if (!map) {
       setMap(createMap("map"));
+      import("leaflet/dist/leaflet.css");
     } else {
       initMap();
     }

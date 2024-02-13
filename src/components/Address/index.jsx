@@ -4,27 +4,34 @@ import "./styles.css";
 
 function Address() {
   const { currentAddress } = useContext(AppContext);
-
+  const addressColumns = [
+    {
+      title: "Ip address",
+      value: currentAddress?.ip,
+    },
+    {
+      title: "Location",
+      value: `${currentAddress?.location?.city || ""}, ${
+        currentAddress?.location?.country || ""
+      }`,
+    },
+    {
+      title: "Timezone",
+      value: currentAddress?.location?.timezone,
+    },
+    {
+      title: "ISP",
+      value: currentAddress?.isp,
+    },
+  ];
   return (
     <section className="address">
-      <div className="address__col">
-        <span className="col__title">Ip address</span>
-        <span className="col__value">{currentAddress?.ip}</span>
-      </div>
-      <div className="address__col">
-        <span className="col__title">Location</span>
-        <span className="col__value">{`${
-          currentAddress?.location?.city || ""
-        }, ${currentAddress?.location?.country || ""}`}</span>
-      </div>
-      <div className="address__col">
-        <span className="col__title">Timezone</span>
-        <span className="col__value">{currentAddress?.location?.timezone}</span>
-      </div>
-      <div className="address__col">
-        <span className="col__title">ISP</span>
-        <span className="col__value">{currentAddress?.isp}</span>
-      </div>
+      {addressColumns.map((col) => (
+        <div key={col.title} className="address__col">
+          <span className="col__title">{col.title}</span>
+          <span className="col__value">{col.value}</span>
+        </div>
+      ))}
     </section>
   );
 }

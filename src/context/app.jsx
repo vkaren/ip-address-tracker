@@ -6,7 +6,7 @@ function AppProvider({ children }) {
   const [currentAddress, setCurrentAddress] = useState({});
 
   useEffect(() => {
-    (async () => await getAddress())();
+    getAddress();
   }, []);
 
   const getAddress = async (addressToSearch) => {
@@ -32,7 +32,8 @@ function AppProvider({ children }) {
       value={{
         currentAddress,
         getAddress,
-      }}>
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
